@@ -9,6 +9,12 @@ $CSS := slice
 (resources.Get "css/colors/default.css")
 }}
 
+{{ $customCSS := .Site.Params.customCSS | default (slice) }}
+
+{{ range $customCSS }}
+{{ $CSS = $CSS | append (resources.Get .) }}
+{{ end }}
+
 {{ with .Site.Params.colorPalette }}
 
 {{ $path := printf "css/colors/%s.css" . }}
