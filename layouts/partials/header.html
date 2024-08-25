@@ -6,21 +6,37 @@
 
     <h1 class="header-title">{{ site.Title }}</h1>
 
-    <div class="flex">
+    <div class="navbar">
         {{ $currentPage := . }}
+        <div class="flex">
 
-        {{ with site.Params.menu }}
-        {{ range . }}
-      
-        <p class="small {{ if eq .name (lower $currentPage.Name) }} bold {{end}}">
-            <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{ with site.Params.menu }}
+            {{ range . }}
+
+            <p class="small {{ if eq .name (lower $currentPage.Name) }} bold {{end}}">
+                <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{
+                end }}>
                 /{{.name }}
-            </a>
-        </p>
-        {{ end }}
-        {{ end }}
-    </div>
+                </a>
+            </p>
+            {{ end }}
+            {{ end }}
+        </div>
 
+        <div class="flex">
+            {{ with site.Params.taxonomyMenu }}
+            {{ range . }}
+
+            <p class="small">
+                <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{
+                end }}>
+                /{{.name }}
+                </a>
+            </p>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
     {{ end }}
 
 </div>
