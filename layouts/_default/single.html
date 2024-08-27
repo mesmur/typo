@@ -24,6 +24,10 @@
       <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
       {{end}}
 
+      {{/* Word Count */}}
+      &nbsp; · &nbsp;
+      {{ .WordCount }} words
+
       {{ if .Param "readTime" }}
       &nbsp; · &nbsp;
       {{ .ReadingTime }} min read
