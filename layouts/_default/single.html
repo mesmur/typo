@@ -11,6 +11,23 @@
     {{/* Title and Summary */}}
 
     <h1 class="single-title">{{ .Title }}</h1>
+
+    {{ with .Params.series }}
+    <div class="taxonomy-highlight">
+      {{ with $.Site.GetPage (printf "/series/%s" .) }}
+      Series: <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.projects }}
+    <div class="taxonomy-highlight">
+      {{ with $.Site.GetPage (printf "/projects/%s" .) }}
+      Project: <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
     {{ with .Param "summary" }}
     <p class="single-summary">{{ . }}</p>
     {{ end }}
@@ -99,5 +116,3 @@
 {{ end }}
 
 {{ end }}
-
-
