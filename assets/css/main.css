@@ -167,9 +167,43 @@ footer a {
 }
 
 .tag-line {
-    margin-bottom: .5rem;
     display: flex;
     align-items: baseline;
+    margin: 0;
+}
+
+.tag-count {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.tag-link {
+    text-decoration: none;
+}
+
+.tag-link:hover {
+    text-decoration: underline;
+}
+
+.sort-options {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sort-options button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    /*background-color: #D3D3D3;*/
+    color: white;
+    border-radius: 4px;
+}
+
+.sort-options button:hover {
+    text-decoration: underline;
 }
 
 .post-line p {
@@ -189,10 +223,6 @@ footer a {
 }
 
 .line-title {
-    margin: 0;
-}
-
-.tag-title {
     margin: 0;
 }
 
