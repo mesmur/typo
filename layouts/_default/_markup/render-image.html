@@ -15,7 +15,7 @@ and build the img class string as "img-tag1 img-tag2 ..."
 {{ end }}
 
 {{/* Use the computed classes on the rendered figure */}}
-<figure class="{{ $classes }}">
+<figure class="{{ $classes }} img-center">
 
     <div>
         <img loading="lazy" alt="{{ .Text }}" src=" {{ $url }}">
@@ -23,7 +23,7 @@ and build the img class string as "img-tag1 img-tag2 ..."
 
     {{ with .Title }}
     <div class="caption-container">
-        <figcaption> {{ . | markdownify}} </figcaption>
+        <figcaption> {{ . | markdownify}}</figcaption>
     </div>
     {{ end }}
 </figure>
