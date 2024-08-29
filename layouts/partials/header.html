@@ -4,7 +4,7 @@
 
     {{ if or (not (.Param "hideHeader")) .IsHome }}
 
-    <a href="/blog" class="header-title">{{ site.Title }}</a>
+    <a href="/" class="header-title">{{ site.Title }}</a>
 
     <div class="navbar">
         {{ $currentPage := . }}
